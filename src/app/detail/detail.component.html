@@ -1,0 +1,43 @@
+
+<div class="container">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Detalhamento do Pokemon</h1>
+    </div>
+  </section>
+  <!-- Heading Row -->
+  <div class="row align-items-center my-5">
+    <div class="col-lg-7">
+      <img class="img-fluid rounded mb-4 mb-lg-0" src="{{ card.imageUrlHiRes }}" alt="">
+    </div>
+    <!-- /.col-lg-8 -->
+    <div class="col-lg-5">
+      <h1 class="font-weight-light"> {{ card.name }}</h1>
+      <p>ID POKEMON: {{ card.id }} </p>
+      <p>TIPOS: {{ card.types }}</p>
+      <p>RESISTENCIA:</p>
+      <ul *ngFor="let resistance of card.resistances ">
+        <li>{{ resistance.type }} : {{ resistance.value }}</li>
+      </ul>
+      <p>FRAQUEZAS:</p>
+      <ul *ngFor="let weaknesses of card.weaknesses ">
+        <li>{{ weaknesses.type }} : {{ weaknesses.value }}</li>
+      </ul>
+      <p>ATAQUES</p>
+      <ul *ngFor="let attack  of card.attacks ">
+        <il> {{ attack.cost }} </il>
+        <il> {{ attack.name }} </il>
+        <il> {{ attack.text }} </il>
+        <il> {{ attack.damage }} </il>
+        <il> {{ attack.convertedEnergyCost }} </il>
+      </ul>
+      <div align="center">
+        <a class="btn btn-outline-secondary" href="home">Voltar</a>
+      </div>
+
+    </div>
+  </div>
+  <!-- /.row -->
+
+
+</div>
